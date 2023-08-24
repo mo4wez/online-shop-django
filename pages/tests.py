@@ -25,4 +25,5 @@ class PagesTest(TestCase):
 
     def test_show_aboutus_page_title_in_aboutus_page_view(self):
         response = self.client.get('/aboutus/')
-        self.assertContains(response, 'About Us')    
+        self.assertContains(response, 'About Us')
+        
