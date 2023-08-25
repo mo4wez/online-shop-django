@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Product
+from .models import Product, Comment
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
@@ -9,5 +9,16 @@ class ProductAdmin(admin.ModelAdmin):
         'description',
         'price',
         'active',
-        'datetime_modified'
+        'datetime_modified',
         )
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = (
+        'user',
+        'product',
+        'text',
+        'stars',
+        'active',
+        'datetime_modified',
+    )
