@@ -35,7 +35,7 @@ class Comment(models.Model):
     active = models.BooleanField(default=True)
 
     datetime_created = models.DateTimeField(auto_now_add=True)
-    datetimr_modified = models.DateTimeField(auto_now=True)
+    datetime_modified = models.DateTimeField(auto_now=True)
 
 
     def __str__(self):
