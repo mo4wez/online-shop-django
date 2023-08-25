@@ -1,4 +1,6 @@
 venv/
 .vscode/
 .idea/
+.env
+docker-compose.yml
 db.sqlite3
