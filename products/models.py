@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.query import QuerySet
 from django.urls import reverse
 from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _
 
 class Product(models.Model):
     title = models.CharField(max_length=32)
@@ -27,17 +28,17 @@ class ActiveCommentsManager(models.Manager):
 
 class Comment(models.Model):
     PRODUCT_STAR = [
-        ('1', 'Very Bad'),
-        ('2', 'Bad'),
-        ('3', 'Normal'),
-        ('4', 'Good'),
-        ('5', 'Perfect'),
+        ('1', _('Very Bad')),
+        ('2', _('Bad')),
+        ('3', _('Normal')),
+        ('4', _('Good')),
+        ('5', _('Perfect')),
     ]
 
     product = models.ForeignKey(to=Product, related_name="comments", on_delete=models.CASCADE)
     user = models.ForeignKey(to=get_user_model(), related_name="comments", on_delete=models.CASCADE)
-    text = models.TextField(verbose_name="Leave cocmment here")
-    stars = models.CharField(max_length=10, verbose_name="Your score to this profuct",choices=PRODUCT_STAR)
+    text = models.TextField(verbose_name=_("Leave cocmment here"))
+    stars = models.CharField(max_length=10, verbose_name=_("Your score to this product"), choices=PRODUCT_STAR)
     active = models.BooleanField(default=True)
 
     datetime_created = models.DateTimeField(auto_now_add=True)
