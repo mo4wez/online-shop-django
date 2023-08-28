@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.query import QuerySet
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 
@@ -19,6 +20,11 @@ class Product(models.Model):
         return reverse("product_detail", kwargs={"pk": self.pk})
 
 
+class ActiveCommentsManager(models.Manager):
+    def get_queryset(self):
+        return super(ActiveCommentsManager, self).get_queryset().filter(active=True)
+
+
 class Comment(models.Model):
     PRODUCT_STAR = [
         ('1', 'Very Bad'),
@@ -36,6 +42,10 @@ class Comment(models.Model):
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
+
+    # manager
+    objects = models.Manager()
+    active_comments_manager = ActiveCommentsManager()
 
     def __str__(self):
         return self.text
