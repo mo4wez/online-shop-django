@@ -116,9 +116,18 @@
     </header>
     <!-- Header End -->
     
-    {% block content %}{% endblock content %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 
-        <!-- ************************* JS Files ************************* -->
+    {% block content %}
+    {% endblock content %}
+
+    <!-- ************************* JS Files ************************* -->
     <!-- jQuery JS -->
     <script src="{% static 'js/vendor.js' %}"></script>
     <!-- Main JS -->
