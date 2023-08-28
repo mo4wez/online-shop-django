@@ -2,23 +2,34 @@ from django.contrib import admin
 
 from .models import Product, Comment
 
+
+class CommentsInline(admin.StackedInline):
+    model = Comment
+    fields = ['user', 'text', 'stars', 'active',]
+    extra = 1
+
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = (
+    list_display = [
         'title',
         'description',
         'price',
         'active',
-        'datetime_modified',
-        )
+        ]
+    
+    inlines = [
+        CommentsInline,
+    ]
+
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = (
+    list_display = [
         'user',
         'product',
         'text',
         'stars',
         'active',
         'datetime_modified',
-    )
+    ]
