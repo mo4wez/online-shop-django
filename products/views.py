@@ -1,21 +1,15 @@
-from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from django.http import HttpResponse
-from django.contrib import messages
+from django.shortcuts import get_object_or_404
 
 from .models import Product, Comment
 from .forms import CommentForm
-
-
-def messages_view(request):
-    messages.success(request, 'This is a success message!')
-    return render(request, 'products/test_hello.html')
 
 
 class ProductListView(generic.ListView):
     queryset = Product.objects.filter(active=True)
     template_name = 'products/product_list.html'
     context_object_name = 'products'
+
 
 class ProductDetailView(generic.DetailView):
     model = Product
