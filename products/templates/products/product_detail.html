@@ -45,13 +45,20 @@
                                         <span class="money old-price text-danger">۲۱۰,۰۰۰ {% trans "Toman" %}</span>
                                     </div>
                                     <div class="product-action d-flex align-items-sm-center align-content-center mb--30">
-                                        <div class="quantity-wrapper d-flex justify-content-start">
+                                        <form action="{% url 'cart:add_to_cart' product.id %}" method="POST">
+                                            {% csrf_token %}
+                                            {{add_to_cart_form|crispy}}
+                                            <button class="btn" type="submit">
+                                                {% trans "Add to card" %}
+                                            </button>
+                                        </form>
+                                        {% comment %} <div class="quantity-wrapper d-flex justify-content-start">
                                             <div class="quantity">
                                                 <input type="number" class="quantity-input" name="qty" id="qty" value="1" min="1">
                                             </div>
                                         </div>
                                         <button type="button" class="btn btn-small btn-bg-red btn-color-white btn-hover-2" onclick="window.location.href='cart.html'">
-                                            {% trans "Add to card" %}
+                                            {% trans "Add to card" %} {% endcomment %}
                                         </button>
                                     </div>
                                     <div class="product-footer-meta mt-5 pt-5">
