@@ -187,3 +187,11 @@ ACCOUNT_UNIQUE_EMAIL = True
 # cryspy forms config
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+from django.contrib.messages import constants as messages_constants
+# messages setting
+MESSAGES_TAGS = {
+    # based on bootstrap5
+    messages_constants.ERROR: 'danger',
+}
+
