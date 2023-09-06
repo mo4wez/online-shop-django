@@ -2,7 +2,8 @@
 {% load static %}
 {% load i18n %}
 {% load crispy_forms_tags %}
-
+{% load persian_translation_tags %}
+{% load humanize %}
 
 {% block page_title %}سبد خرید{% endblock page_title %}
 
@@ -26,11 +27,11 @@
                                             <thead>
                                                 <tr>
                                                     <th>&nbsp;</th>
-                                                    <th>عکس محصول</th>
-                                                    <th>نام محصول</th>
-                                                    <th>قیمت</th>
-                                                    <th>مقدار</th>
-                                                    <th>مجموع</th>
+                                                    <th>{% trans "Product Image" %}</th>
+                                                    <th>{% trans "Product Name" %}</th>
+                                                    <th>{% trans "Price" %}</th>
+                                                    <th>{% trans "Amount" %}</th>
+                                                    <th>{% trans "total" %}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -53,7 +54,7 @@
                                                         </td>
                                                         <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{item.product_obj.price}}</span>
+                                                                <span class="money">{{item.product_obj.price|intcomma:False|to_persian_numbers}} {% trans "Toman" %}</span>
                                                             </span>
                                                         </td>
                                                         <td class="product-quantity">

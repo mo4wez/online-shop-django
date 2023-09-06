@@ -4,6 +4,8 @@
 {% load crispy_forms_tags %}
 {% load comment_tags %}
 {% load jalali_tags %}
+{% load persian_translation_tags %}
+{% load humanize %}
 
 {% block page_title %}Product{% endblock page_title %}
 
@@ -26,7 +28,7 @@
                                         {{product.description}}
                                     </p>
                                     <div class="my-5 py-5 product-price-wrapper mb--25">
-                                        <span class="money text-success">{{product.price}} {% trans "Toman" %}</span>
+                                        <span class="money text-success">{{product.price|intcomma:False|to_persian_numbers}} {% trans "Toman" %}</span>
                                         <span class="price-separator">-</span>
                                         <span class="money old-price text-danger">۲۱۰,۰۰۰ {% trans "Toman" %}</span>
                                     </div>
@@ -115,7 +117,7 @@
                                                                             <div class="review__meta">
                                                                                 <strong class="review__author px-4">{{comment.user.first_name}}</strong>
                                                                                 <span class="review__dash">-</span>
-                                                                                <span class="review__published-date">{{comment.datetime_created|to_jalali:'%Y/%m/%d'}}</span>
+                                                                                <span class="review__published-date">{{comment.datetime_created|to_jalali:'%Y/%m/%d'|to_persian_numbers}}</span>
                                                                             </div>
                                                                             <div class="product-rating">
                                                                                 <div class="m-0 star-rating star-five">
