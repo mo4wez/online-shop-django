@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 {% load comment_tags %}
+{% load jalali_tags %}
 
 {% block page_title %}Product{% endblock page_title %}
 
@@ -114,7 +115,7 @@
                                                                             <div class="review__meta">
                                                                                 <strong class="review__author px-4">{{comment.user.first_name}}</strong>
                                                                                 <span class="review__dash">-</span>
-                                                                                <span class="review__published-date">{{comment.datetime_created}}</span>
+                                                                                <span class="review__published-date">{{comment.datetime_created|to_jalali:'%Y/%m/%d'}}</span>
                                                                             </div>
                                                                             <div class="product-rating">
                                                                                 <div class="m-0 star-rating star-five">

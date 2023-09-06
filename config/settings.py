@@ -15,6 +15,9 @@ from environs import Env
 
 import os
 
+import locale
+locale.setlocale(locale.LC_ALL, "fa_IR.UTF-8")
+
 # environment variables
 env = Env()
 env.read_env()
