@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rosetta',
+    'jalali_date',
 
     # local apps
     'accounts.apps.AccountsConfig',
