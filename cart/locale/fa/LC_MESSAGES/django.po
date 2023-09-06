@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 13:55+0330\n"
+"POT-Creation-Date: 2023-09-06 14:05+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr "نام محصول"
 
 #: .\templates\cart\cart_detail.html:32
 msgid "Price"
-msgstr "جمع کل"
+msgstr "قیمت"
 
 #: .\templates\cart\cart_detail.html:33
 msgid "Amount"
@@ -49,7 +49,8 @@ msgstr "مقدار"
 msgid "total"
 msgstr "مجموع"
 
-#: .\templates\cart\cart_detail.html:57 .\templates\cart\cart_sidebar.html:34
+#: .\templates\cart\cart_detail.html:57 .\templates\cart\cart_detail.html:79
+#: .\templates\cart\cart_sidebar.html:34
 msgid "Toman"
 msgstr "تومان"
 
