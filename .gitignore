@@ -1,4 +1,5 @@
 venv/
+staticfiles/
 .vscode/
 .idea/
 .env
