@@ -6,11 +6,11 @@ from ckeditor.fields import RichTextField
 from django.utils.translation import gettext_lazy as _
 
 class Product(models.Model):
-    title = models.CharField(max_length=32)
-    description = RichTextField()
-    short_description = models.TextField(blank=True)
-    price = models.PositiveIntegerField(default=0)
-    active = models.BooleanField(default=True)
+    title = models.CharField(max_length=32, verbose_name=_('Title'))
+    description = RichTextField(verbose_name=_('Description'))
+    short_description = models.TextField(blank=True, verbose_name=_('Short Description'))
+    price = models.PositiveIntegerField(default=0, verbose_name=_('Price'))
+    active = models.BooleanField(default=True, verbose_name=_('Active'))
     image = models.ImageField(upload_to='product/product_cover/', blank=True, verbose_name=_('image'))
 
     datetime_created = models.DateTimeField(default=timezone.now)
@@ -38,8 +38,8 @@ class Comment(models.Model):
         ('5', _('Perfect')),
     ]
 
-    product = models.ForeignKey(to=Product, related_name="comments", on_delete=models.CASCADE)
-    user = models.ForeignKey(to=get_user_model(), related_name="comments", on_delete=models.CASCADE)
+    product = models.ForeignKey(to=Product, related_name="comments", verbose_name=_('Product'), on_delete=models.CASCADE)
+    user = models.ForeignKey(to=get_user_model(), related_name="comments", verbose_name=_("User"), on_delete=models.CASCADE)
     text = models.TextField(verbose_name=_("Leave cocmment here"))
     stars = models.CharField(max_length=10, verbose_name=_("Your score to this product"), choices=PRODUCT_STAR)
     active = models.BooleanField(default=True)
