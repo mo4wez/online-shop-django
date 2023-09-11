@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-11 17:34+0330\n"
+"POT-Creation-Date: 2023-09-11 18:28+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,34 +17,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: .\forms.py:17
+msgid "Enter your order note (Optional)."
+msgstr "یادداشتی برای سفارش خود بنویسید (اختیاری)"
+
+#: .\models.py:7
+msgid "User"
+msgstr "کاربر"
+
+#: .\models.py:8
+msgid "Is Paid?"
+msgstr "پرداخت شده؟"
+
+#: .\models.py:10
+msgid "First Name"
+msgstr "نام"
+
+#: .\models.py:11
+msgid "Last Name"
+msgstr "نام خانوادگی"
+
+#: .\models.py:12
+msgid "Phone Number"
+msgstr "تلفن همراه"
+
+#: .\models.py:13
+msgid "Address"
+msgstr "آدرس"
+
+#: .\models.py:14
+msgid "Order Notes"
+msgstr "یادداشت سفارش"
+
+#: .\models.py:16
+msgid "Created at"
+msgstr "ایجاد شده در"
+
+#: .\models.py:17
+msgid "Modified at"
+msgstr "ویرایش شده در"
+
 #: .\templates\orders\order_create.html:18
 msgid "Order Page"
 msgstr "صفحه سفارش"
 
-#: .\templates\orders\order_create.html:72
+#: .\templates\orders\order_create.html:35
 msgid "Your Order"
 msgstr "سفارش شما"
 
-#: .\templates\orders\order_create.html:78
+#: .\templates\orders\order_create.html:41
 msgid "Product"
 msgstr "محصول"
 
-#: .\templates\orders\order_create.html:79
+#: .\templates\orders\order_create.html:42
 msgid "Final Price"
 msgstr "قیمت نهایی"
 
-#: .\templates\orders\order_create.html:92
-msgid "Total"
-msgstr "مجموع"
-
-#: .\templates\orders\order_create.html:93
+#: .\templates\orders\order_create.html:51
+#: .\templates\orders\order_create.html:58
 msgid "Toman"
 msgstr "تومان"
 
-#: .\templates\orders\order_create.html:99
+#: .\templates\orders\order_create.html:57
+msgid "Total"
+msgstr "مجموع"
+
+#: .\templates\orders\order_create.html:64
 msgid "Payment Method"
 msgstr "روش پرداخت"
 
-#: .\templates\orders\order_create.html:104
+#: .\templates\orders\order_create.html:69
 msgid "Zarrin Pal Online payment gateway"
 msgstr "درگاه پرداخت آنلاین زرین پال"
