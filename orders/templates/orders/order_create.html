@@ -14,7 +14,10 @@
 
 <!-- Main Content Wrapper Start -->
 <div class="main-content-wrapper">
-    {% include 'title_header.html' with header_name=product.title %}
+
+    {% trans "Order Page" as header_name %}
+    {% include 'title_header.html' with header_name=header_name %}
+
     <div class="page-content-inner">
         <div class="container">
             <div class="row pt--50 pt-md--40 pt-sm--20"></div>
